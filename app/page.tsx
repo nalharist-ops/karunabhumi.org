@@ -56,10 +56,11 @@ export default function Page() {
         </Link>
         <br />
       </div>
+
       
-     {/* <div className="mt-0 space-y-2">
+      <div className="mt-0 space-y-2">
         <Link
-          href="#about"
+          href="/now"
           className="inline-flex items-center group underline decoration-dotted underline-offset-4 hover:text-neutral-500"
         >
           what I'm up to now ⭐
@@ -72,7 +73,7 @@ export default function Page() {
           />
         </Link>
         <br />
-      </div>*/}
+      </div>
       
 
       {/* Projects */}
