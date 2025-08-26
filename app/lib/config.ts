@@ -1,6 +1,6 @@
 export const metaData = {
   baseUrl: "https://alh-rist.vercel.app", 
-  title: "",
+  title: "Naufal Al Harist - Portfolio",
   name: "alh.rist_",
   ogImage: "/logo.svg",
   description:
