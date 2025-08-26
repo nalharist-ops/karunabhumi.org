@@ -37,7 +37,9 @@ export default function AboutPage() {
             <p className="text-neutral-400">
               Currently an undergraduate psychology student at{" "}
               <Link
-          href="/https://fpsi.um.ac.id"
+          href="https://fpsi.um.ac.id"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-neutral-100 inline-flex items-center group underline decoration-dotted underline-offset-4 hover:text-neutral-500"
         >
           Universitas Negeri Malang
@@ -120,7 +122,9 @@ export default function AboutPage() {
         <div className="space-y-6 text-neutral-400">
           <div>
             <Link
-          href="/https://klubbungabutikresort.com"
+          href="https://klubbungabutikresort.com"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-neutral-100 inline-flex items-center group underline decoration-dotted underline-offset-4 hover:text-neutral-500"
         >
           HR Intern, Klub Bunga Theme Park Hotel
@@ -142,7 +146,7 @@ export default function AboutPage() {
           <div></div>
           <div>
             <Link
-          href="/https://www.instagram.com/catalyst.ins"
+          href="https://www.instagram.com/catalyst.ins"
           className="text-neutral-100 inline-flex items-center group underline decoration-dotted underline-offset-4 hover:text-neutral-500"
         >
           General Admin, PT. Katalis Pendidikan Indonesia
@@ -162,7 +166,9 @@ export default function AboutPage() {
           </div>
           <div>
             <Link
-          href="/https://csps.um.ac.id"
+          href="https://csps.um.ac.id"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-neutral-100 inline-flex items-center group underline decoration-dotted underline-offset-4 hover:text-neutral-500"
         >
           Research Assistant, PT. CSPS Talenta Humanika
@@ -190,7 +196,9 @@ export default function AboutPage() {
         <div className="space-y-6 text-neutral-400">
           <div>
             <Link
-          href="/https://fpsi.um.ac.id"
+          href="https://fpsi.um.ac.id"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-neutral-100 inline-flex items-center group underline decoration-dotted underline-offset-4 hover:text-neutral-500"
         >
           Universitas Negeri Malang - B.A. Psychology
