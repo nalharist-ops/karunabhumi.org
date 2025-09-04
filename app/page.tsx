@@ -15,25 +15,6 @@ const graphicProjects = [
 ];
 
 export default function Page() {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-
-  // ✅ ESC closes modal, arrows navigate
-  useEffect(() => {
-    const handleKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSelectedIndex(null);
-      if (e.key === "ArrowRight" && selectedIndex !== null) {
-        setSelectedIndex((prev) => (prev! + 1) % graphicProjects.length);
-      }
-      if (e.key === "ArrowLeft" && selectedIndex !== null) {
-        setSelectedIndex(
-          (prev) => (prev! - 1 + graphicProjects.length) % graphicProjects.length
-        );
-      }
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [selectedIndex]);
-
   return (
     <section className="prose prose-neutral dark:prose-invert">
       {/* Intro */}
