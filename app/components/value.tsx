@@ -5,9 +5,9 @@ import Image from 'next/image';
 const valuesData = [
   {
     imageSrc: '/photos/keep-growing.png',
-    alt: "Edukasi Lingkungan dan Kesadaran",
-    title: "Edukasi Kesadaran akan Lingkungan",
-    description: "Kami menyediakan informasi terkini tentang perubahan iklim dan dampaknya terhadap dunia.",
+    alt: "Edukasi Lingkungan",
+    title: "Edukasi Lingkungan",
+    description: "Kami menyediakan informasi terkini tentang perubahan iklim dan dampaknya terhadap manusia dan lingkungan.",
     bgColor: "#daba89",
     textColor: "#1c2c26",
   },
@@ -20,7 +20,7 @@ const valuesData = [
     textColor: "#ffffff",
   },
   {
-    imageSrc: '/photos/mitigate-storms.png',
+    imageSrc: '/photos/restore-ecosystems.png',
     alt: "Proyek Konservasi",
     title: "Proyek Konservasi",
     description: "Kami aktif terlibat dalam proyek yang bertujuan melestarikan sumber daya alam dan lingkungan.",
@@ -28,7 +28,7 @@ const valuesData = [
     textColor: "#ffffff",
   },
   {
-    imageSrc: '/photos/restore-ecosystems.png',
+    imageSrc: '/photos/mitigate-storms.png',
     alt: "Kampanye Publik",
     title: "Kampanye Publik",
     description: "Kami tercatat dalam berbagai kampanye untuk meningkatkan kesadaran tentang isu perubahan iklim di masyarakat.",
@@ -40,13 +40,11 @@ const valuesData = [
 // --- The Main Component ---
 export function ValuesSection() {
   return (
-    // FIX 1: Added `gap-16` to create a consistent space between the top and bottom sections.
     <section 
       className="flex flex-col min-h-screen p-8 md:p-16 lg:p-24 gap-16" 
       style={{ backgroundColor: '#103d1d' }}
     >
       {/* Top Section */}
-      {/* FIX 2: Removed the large bottom margin (`mb-16 md:mb-24 lg:mb-32`). */}
       <div className="flex flex-col md:flex-row justify-between items-start">
         <h1 className="text-3xl font-serif text-white md:text-5xl mb-8 md:mb-0 w-full md:w-1/2 lg:w-auto">
           Nilai-Nilai Kami
@@ -62,10 +60,11 @@ export function ValuesSection() {
       </div>
 
       {/* Bottom Content Grid */}
-      {/* FIX 3: Removed `mt-auto`. The new `gap-16` on the parent now controls the spacing. */}
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4 items-start">
+      {/* FIX 1: Changed grid gap from `gap-8` to `gap-4` for a tighter layout. */}
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 items-start">
         {valuesData.map((value, index) => (
-          <div key={index} className="flex flex-col overflow-hidden rounded-lg shadow-lg">
+          // FIX 2: Removed `rounded-lg` and `shadow-lg` for solid, sharp edges.
+          <div key={index} className="flex flex-col overflow-hidden">
             <Image
               src={value.imageSrc}
               alt={value.alt}
@@ -74,10 +73,10 @@ export function ValuesSection() {
               className="w-full h-auto" 
             />
             <div 
-              className="p-6" 
+              className="p-6 flex flex-col flex-grow" 
               style={{ backgroundColor: value.bgColor, color: value.textColor }}
             >
-              <h2 className="mb-2 text-2xl font-bold">{value.title}</h2>
+              <h2 className="mb-2 text-3xl font-bold">{value.title}</h2>
               <p className="text-base leading-relaxed">{value.description}</p>
             </div>
           </div>
