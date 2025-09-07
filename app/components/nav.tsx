@@ -7,16 +7,12 @@ import { FaXTwitter, FaLinkedinIn } from "react-icons/fa6";
 import { TbMailFilled } from "react-icons/tb";
 import { FiArrowRight } from "react-icons/fi";
 import Image from "next/image";
-
-// 1. Import the custom hook
 import { useScrollDirection } from "../hooks/useScrollDirection"; // Ensure this path is correct
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  // 2. Use the hook to get the current scroll direction
   const scrollDirection = useScrollDirection();
 
-  // Variant for the main menu panel slide-down animation
   const menuVariants: Variants = {
     hidden: { y: "-100%" },
     visible: {
@@ -36,7 +32,6 @@ export function Navbar() {
     },
   };
 
-  // ... (Your other variants like staggerVariants and fadeVariants remain the same)
   const staggerVariants: Variants = {
     visible: {
       transition: {
@@ -66,18 +61,16 @@ export function Navbar() {
     },
   };
 
-
   return (
-    // 3. Update the className for the <nav> element
     <nav
       className={`
-        fixed top-0 left-0 w-full z-50 px-8 py-6 flex items-center justify-between 
+        fixed top-0 left-0 w-full z-50 px-4 sm:px-8 py-6 flex items-center justify-between 
         bg-transparent text-white transition-transform duration-300 ease-in-out
         ${scrollDirection === "down" ? "-translate-y-full" : "translate-y-0"}
       `}
     >
       {/* Logo */}
-      <Link href="/" className="flex items-center">
+      <Link href="/" className="z-[60]">
         <Image
           className="filter invert brightness-0"
           src="/favicon.png"
@@ -88,8 +81,8 @@ export function Navbar() {
         />
       </Link>
 
-      {/* Title */}
-      <h1 className="font-serif text-3xl tracking-wide absolute left-1/2 transform -translate-x-1/2 z-[60]">
+      {/* Title - FIX 1: Hide on mobile (hidden) and show on medium screens and up (md:block) to prevent overlap */}
+      <h1 className="hidden md:block font-serif text-3xl tracking-wide absolute left-1/2 transform -translate-x-1/2 z-[60]">
         Taru Karuna Bhumi
       </h1>
 
@@ -115,7 +108,7 @@ export function Navbar() {
         />
       </button>
 
-      {/* Menu (Your existing framer-motion code is unchanged) */}
+      {/* Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -124,19 +117,20 @@ export function Navbar() {
             animate="visible"
             exit="exit"
             variants={menuVariants}
-            className="fixed top-0 left-0 w-full h-[80vh] bg-green-950 text-white flex flex-col overflow-hidden z-[50]"
+            className="fixed top-0 left-0 w-full h-screen md:h-[80vh] bg-green-950 text-white flex flex-col overflow-y-auto z-[50]"
           >
-           {/* ... all your menu content ... */}
+            {/* FIX 2: Use responsive padding. Smaller on mobile, larger on desktop. */}
             <motion.div
               variants={staggerVariants}
-              className="px-20 pt-36 pb-18 flex flex-col flex-1"
+              className="px-6 sm:px-12 lg:px-20 pt-28 pb-12 flex flex-col flex-1"
             >
               {/* Menu and Quick Links section */}
-              <div className="flex justify-start flex-1">
-                {/* Large Logo */}
+              {/* FIX 3: Stack vertically on mobile (flex-col) and go to row on large screens (lg:flex-row) */}
+              <div className="flex flex-col lg:flex-row justify-start flex-1">
+                {/* Large Logo - This is already hidden on mobile which is correct */}
                 <motion.div
                   variants={fadeVariants}
-                  className="hidden md:flex col-span-1 flex-col items-start w-[330px] mr-60"
+                  className="hidden md:flex col-span-1 flex-col items-start w-[330px] lg:mr-20 xl:mr-60"
                 >
                   <Image
                     src="/favicon.png"
@@ -145,17 +139,19 @@ export function Navbar() {
                     height={330}
                   />
                 </motion.div>
-                {/* Menu links container */}
-                <div className="flex gap-30 font-serif mt-15">
-                  {/* First Column */}
-                  <div className="flex-none w-64">
+                
+                {/* Menu links container - FIX 4: Stack columns on mobile, use row on medium+ screens */}
+                <div className="flex flex-col md:flex-row md:gap-16 lg:gap-24 font-serif md:mt-15">
+                  {/* First Column - FIX 5: Full width on mobile, fixed on medium+ */}
+                  <div className="flex-none w-full md:w-64 mb-8 md:mb-0">
                     <motion.p
                       variants={fadeVariants}
                       className="text-sm uppercase tracking-widest mb-4"
                     >
                       Menu
                     </motion.p>
-                    <ul className="space-y-4 text-4xl font-light leading-tight">
+                    {/* FIX 6: Smaller font on mobile, larger on small screens and up */}
+                    <ul className="space-y-3 text-3xl sm:text-4xl font-light leading-tight">
                       {[
                         { label: "About", href: "/about" },
                         { label: "Actions", href: "/actions" },
@@ -177,9 +173,9 @@ export function Navbar() {
                     </ul>
                   </div>
 
-                  {/* Second Column */}
-                  <div className="flex-none pt-10 w-64">
-                    <ul className="space-y-4 text-4xl font-light leading-tight">
+                  {/* Second Column - FIX 7: Full width on mobile, fixed on medium+. Removed top padding for mobile. */}
+                  <div className="flex-none w-full md:w-64 md:pt-10">
+                    <ul className="space-y-3 text-3xl sm:text-4xl font-light leading-tight">
                       {[
                         { label: "People", href: "/people" },
                         { label: "Blog", href: "/blog" },
@@ -203,15 +199,15 @@ export function Navbar() {
                 </div>
               </div>
 
-              {/* Footer section */}
+              {/* Footer section - FIX 8: Stack on mobile, row on medium+. Center items and add gap for mobile. */}
               <motion.div
                 variants={fadeVariants}
-                className="border-t border-gray-700 mt-12 pt-6 flex justify-between items-center text-base text-gray-400"
+                className="border-t border-gray-700 mt-12 pt-6 flex flex-col text-center gap-4 md:flex-row md:text-left md:justify-between items-center text-sm sm:text-base text-gray-400"
               >
                 <span>© {new Date().getFullYear()} Taru Karuna Bhumi</span>
 
                 {/* Socials */}
-                <div className="flex gap-10 text-2xl">
+                <div className="flex gap-8 text-2xl">
                   <Link href="https://twitter.com" target="_blank">
                     <FaXTwitter />
                   </Link>

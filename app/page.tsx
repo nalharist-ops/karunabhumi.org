@@ -3,7 +3,8 @@
 import Link from "next/link";
 import { useState, useEffect } from 'react';
 import Image from "next/image";
-import { HighlightSection } from "@/components/HighlightSection"
+import { HighlightSection } from "@/components/HighlightSection";
+
 const backgroundImages = [
   '/photos/bg1.webp',
   '/photos/bg2.webp',
@@ -29,7 +30,7 @@ export default function Home() {
   );
 }
 
-// I've moved your hero section into its own component for clarity
+// Corrected Hero Section component
 function HeroSection() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -44,10 +45,11 @@ function HeroSection() {
   }, []);
 
   return (
-    // 1. The parent section needs 'relative' and 'overflow-hidden'
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    // FIX 1: Changed 'items-center' to 'items-end'. 
+    // This pushes the content to the bottom of the section on ALL screen sizes.
+    <section className="relative h-screen w-full overflow-hidden flex items-end justify-center">
       
-      {/* 2. CHANGE: The background is now 'absolute' to fill its parent section */}
+      {/* Background Image Layer (no changes here) */}
       <div className="absolute inset-0 z-0">
         {backgroundImages.map((src, index) => (
           <Image
@@ -64,21 +66,25 @@ function HeroSection() {
         ))}
       </div>
 
-      {/* 3. The overlay sits on top of the background */}
+      {/* Overlay Layer (no changes here) */}
       <div className="absolute inset-0 bg-black/40 z-10" />
 
-      {/* 4. The content sits on top of the overlay */}
-      <div className="mt-60 relative z-20 flex items-center justify-center px-8 text-white">
-        <div className="w-full max-w-screen-xl grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+      {/* Content Layer */}
+      {/* FIX 2: Removed redundant flex classes and added bottom padding (pb-20) 
+          to create space from the screen's edge. */}
+      <div className="relative z-20 w-full px-4 sm:px-8 text-white pb-20">
+        <div className="w-full max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          
           {/* Main headline */}
           <div className="md:col-span-1">
-            <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight drop-shadow-lg">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-serif font-bold leading-tight drop-shadow-lg">
               Bersama Melawan <br /> Perubahan Iklim
             </h1>
           </div>
-          {/* ... your other content ... */}
+          
+          {/* Sub-content and Call to Action */}
           <div className="md:col-span-1 flex flex-col items-start md:items-end">
-             <p className="mt-6 max-w-md text-lg md:text-xl leading-relaxed text-gray-200 drop-shadow md:text-right">
+             <p className="mt-4 md:mt-6 max-w-md text-base sm:text-lg md:text-xl leading-relaxed text-gray-200 drop-shadow md:text-right">
                Bergabunglah dengan gerakan global untuk melindungi bumi kita.
                Melalui aksi nyata dan kegiatan sosial, kita dapat menciptakan
                perubahan positif untuk masa depan yang berkelanjutan.
@@ -86,7 +92,7 @@ function HeroSection() {
              <div className="mt-8">
                <Link
                  href="#get-involved"
-                 className="inline-flex items-center bg-white/10 hover:bg-white/20 border border-white px-6 py-3 rounded-full text-white text-lg font-medium transition-colors backdrop-blur-md"
+                 className="inline-flex items-center bg-white/10 hover:bg-white/20 border border-white px-6 py-3 rounded-full text-white font-medium transition-colors backdrop-blur-md"
                >
                  Get Involved
                </Link>
