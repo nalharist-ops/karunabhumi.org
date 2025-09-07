@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 import { HighlightSection } from "@/components/HighlightSection";
+import { ValuesSection } from '@/components/value';
 
 const backgroundImages = [
   '/photos/bg1.webp',
@@ -18,6 +19,7 @@ export default function Home() {
       {/* Your Hero Section with the alternating background */}
       <HeroSection />
       <HighlightSection />
+      <ValuesSection />
       {/* You can now add other sections below */}
       <section className="h-screen bg-white flex items-center justify-center">
         <h2 className="text-4xl text-black">This is the Next Section</h2>
@@ -67,7 +69,7 @@ function HeroSection() {
       </div>
 
       {/* Overlay Layer (no changes here) */}
-      <div className="absolute inset-0 bg-black/40 z-10" />
+
 
       {/* Content Layer */}
       {/* FIX 2: Removed redundant flex classes and added bottom padding (pb-20) 
