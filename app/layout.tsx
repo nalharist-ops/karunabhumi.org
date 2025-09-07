@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   icons: {
-    icon: "/logo.svg",
+    icon: "/favicon.png",
   },
 };
 
@@ -73,22 +73,24 @@ export default function RootLayout({
           title="JSON Feed"
         />
       </head>
-      <body className="antialiased flex flex-col items-center justify-center mx-auto mb-12">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main className="flex-auto min-w-0 flex flex-col px-6 sm:px-4 md:px-0 max-w-[624px] w-full">
-            <Navbar />
-            {children}
-            <Footer />
-            <Analytics />
-            <SpeedInsights />
-          </main>
-        </ThemeProvider>
-      </body>
+      <body className="antialiased w-full overflow-x-hidden">
+  <ThemeProvider
+    attribute="class"
+    defaultTheme="system"
+    enableSystem
+    disableTransitionOnChange
+  >
+    <Navbar />
+
+    <main className="flex-auto w-full flex flex-col">
+      {children}
+    </main>
+
+    <Footer />
+    <Analytics />
+    <SpeedInsights />
+  </ThemeProvider>
+</body>
     </html>
   );
 }

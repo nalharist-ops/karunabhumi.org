@@ -39,6 +39,12 @@
 html {
   min-width: 360px;
 }
+@font-face {
+  font-family: 'Vilane';
+  src: url('/fonts/Vilane.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 .prose {
   @apply text-[#000000] dark:text-[#FFFFFF];

@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "typeRoots": ["./types", "./node_modules/@types"],
+    "target": "es2020",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -15,6 +16,13 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "incremental": true,
+    
+    "paths": {
+      "@/components/*": ["app/components/*"],
+      "@/hooks/*": ["app/hooks/*"],
+      "@/app/*": ["app/*"]
+    },
+
     "plugins": [
       {
         "name": "next"

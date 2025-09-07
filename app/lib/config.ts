@@ -1,10 +1,10 @@
 export const metaData = {
-  baseUrl: "https://alh-rist.vercel.app", 
-  title: "Naufal Al Harist - Portfolio",
-  name: "alh.rist_",
-  ogImage: "/logo.svg",
+  baseUrl: "https://karunabhumi.org", 
+  title: "Taru Karuna Bhumi",
+  name: "Taru Karuna Bhumi",
+  ogImage: "/favicon.png",
   description:
-    "A portfolio website of Naufal Al Harist",
+    "Taru Karuna Bhumi Landing Page",
 };
 
 export const socialLinks = {
