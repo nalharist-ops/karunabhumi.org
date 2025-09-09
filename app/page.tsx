@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Image from "next/image";
 import { HighlightSection } from "@/components/HighlightSection";
 import { ValuesSection } from '@/components/value';
+import { StickyCards } from '@/components/StickyCards';
 
 const backgroundImages = [
   '/photos/bg1.webp',
@@ -20,9 +21,11 @@ export default function Home() {
       <HeroSection />
       <HighlightSection />
       <ValuesSection />
+      <StickyCards />
       {/* You can now add other sections below */}
-      <section className="h-screen bg-white flex items-center justify-center">
+      <section className="z-20 h-screen bg-white flex items-center justify-center">
         <h2 className="text-4xl text-black">This is the Next Section</h2>
+        
       </section>
       
       <section className="h-screen bg-gray-200 flex items-center justify-center">
