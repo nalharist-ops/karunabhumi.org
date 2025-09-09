@@ -6,7 +6,7 @@ const valuesData = [
   {
     imageSrc: '/photos/keep-growing.png',
     alt: "Edukasi Lingkungan",
-    title: "Edukasi Lingkungan",
+    title: "Edukasi Kesadaran akan Lingkungan",
     description: "Kami menyediakan informasi terkini tentang perubahan iklim dan dampaknya terhadap manusia dan lingkungan.",
     bgColor: "#daba89",
     textColor: "#1c2c26",
