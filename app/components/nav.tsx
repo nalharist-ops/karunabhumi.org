@@ -153,9 +153,9 @@ export function Navbar() {
                     {/* FIX 6: Smaller font on mobile, larger on small screens and up */}
                     <ul className="space-y-3 text-3xl sm:text-4xl font-light leading-tight">
                       {[
-                        { label: "About", href: "/about" },
-                        { label: "Actions", href: "/actions" },
-                        { label: "Gallery", href: "/gallery" },
+                        { label: "Tentang", href: "/about" },
+                        { label: "Kegiatan", href: "/actions" },
+                        { label: "Galeri", href: "/gallery" },
                       ].map((item, i) => (
                         <motion.li key={i} variants={fadeVariants}>
                           <Link
@@ -177,9 +177,8 @@ export function Navbar() {
                   <div className="flex-none w-full md:w-64 md:pt-10">
                     <ul className="space-y-3 text-3xl sm:text-4xl font-light leading-tight">
                       {[
-                        { label: "People", href: "/people" },
-                        { label: "Blog", href: "/blog" },
-                        { label: "Contact", href: "/contact" },
+                        { label: "Jurnal", href: "/blog" },
+                        { label: "Kontak", href: "/contact" },
                       ].map((item, i) => (
                         <motion.li key={i} variants={fadeVariants}>
                           <Link

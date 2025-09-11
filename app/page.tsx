@@ -6,6 +6,9 @@ import Image from "next/image";
 import { HighlightSection } from "@/components/HighlightSection";
 import { ValuesSection } from '@/components/value';
 import { StickyCards } from '@/components/StickyCards';
+import GallerySection from "./components/GallerySection";
+import BlogSection from "./components/jurnal";
+import Footer from "./components/footer";
 
 const backgroundImages = [
   '/photos/bg1.webp',
@@ -17,20 +20,13 @@ const backgroundImages = [
 export default function Home() {
   return (
     <main>
-      {/* Your Hero Section with the alternating background */}
       <HeroSection />
       <HighlightSection />
       <ValuesSection />
       <StickyCards />
-      {/* You can now add other sections below */}
-      <section className="z-20 h-screen bg-white flex items-center justify-center">
-        <h2 className="text-4xl text-black">This is the Next Section</h2>
-        
-      </section>
-      
-      <section className="h-screen bg-gray-200 flex items-center justify-center">
-        <h2 className="text-4xl text-black">Another Section</h2>
-      </section>
+      <GallerySection/>
+      <BlogSection/>
+      <Footer/>
     </main>
   );
 }

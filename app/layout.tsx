@@ -102,7 +102,7 @@ export default function RootLayout({
           <main className="flex-auto w-full flex flex-col">
             {children}
           </main>
-          <Footer />
+          
           <Analytics />
           <SpeedInsights />
         </ThemeProvider>

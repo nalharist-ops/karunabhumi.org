@@ -49,14 +49,6 @@ export function ValuesSection() {
         <h1 className="text-3xl font-serif text-white md:text-5xl mb-8 md:mb-0 w-full md:w-1/2 lg:w-auto">
           Nilai-Nilai Kami
         </h1>
-        <div className="flex flex-col items-start md:items-end text-left md:text-right w-full md:w-1-2 lg:w-auto">
-          <p className="max-w-md text-base md:text-lg text-white mb-6">
-            ini placeholder ges, isi nanti yes. lorem ipsum dolor sit amet blablabla.
-          </p>
-          <a href="/rainmaker-uses" className="text-[#daba89] hover:text-white transition-colors flex items-center group text-lg font-semibold">
-            placeholder button <span className="ml-2 transition-transform group-hover:translate-x-1">→</span>
-          </a>
-        </div>
       </div>
 
       {/* Bottom Content Grid */}
