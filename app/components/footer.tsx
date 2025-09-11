@@ -40,10 +40,10 @@ const Footer = () => {
                         <div>
                             <h3 className="uppercase font-light text-sm tracking-wider text-white mb-4">Menu</h3>
                             <div className="flex flex-col space-y-3">
-                                <a href="/about" className="text-xl text-white hover:text-[#E3C567] transition-colors duration-200">Tentang</a>
-                                <a href="/actions" className="text-xl text-white hover:text-[#E3C567] transition-colors duration-200">Kegiatan</a>
-                                <a href="/gallery" className="text-xl text-white hover:text-[#E3C567] transition-colors duration-200">Galeri</a>
-                                <a href="/blog" className="text-xl text-white hover:text-[#E3C567] transition-colors duration-200">Jurnal</a>
+                                <a href="/#" className="text-xl text-white hover:text-[#E3C567] transition-colors duration-200">Tentang</a>
+                                <a href="/#" className="text-xl text-white hover:text-[#E3C567] transition-colors duration-200">Kegiatan</a>
+                                <a href="/#" className="text-xl text-white hover:text-[#E3C567] transition-colors duration-200">Galeri</a>
+                                <a href="/#" className="text-xl text-white hover:text-[#E3C567] transition-colors duration-200">Jurnal</a>
                             </div>
                         </div>
 
@@ -53,10 +53,10 @@ const Footer = () => {
                             <div className="flex flex-col space-y-3 items-end sm:items-start">
                                <a href="/contact" className="text-xl text-white hover:text-[#E3C567] transition-colors duration-200">Kontak</a>
                                 <div className="flex gap-4 text-2xl pt-2">
-                                    <a href="https://twitter.com" target="_blank" aria-label="Twitter" className="text-white hover:text-[#E3C567] transition-colors">
+                                    <a href="/#" target="_blank" aria-label="Twitter" className="text-white hover:text-[#E3C567] transition-colors">
                                         <TwitterIcon />
                                     </a>
-                                    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn" className="text-white hover:text-[#E3C567] transition-colors">
+                                    <a href="/#" target="_blank" aria-label="LinkedIn" className="text-white hover:text-[#E3C567] transition-colors">
                                         <LinkedInIcon />
                                     </a>
                                     <a href="mailto:hello@greenearth.org" aria-label="Email" className="text-white hover:text-[#E3C567] transition-colors">

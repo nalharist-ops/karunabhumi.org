@@ -153,9 +153,9 @@ export function Navbar() {
                     {/* FIX 6: Smaller font on mobile, larger on small screens and up */}
                     <ul className="space-y-3 text-3xl sm:text-4xl font-light leading-tight">
                       {[
-                        { label: "Tentang", href: "/about" },
-                        { label: "Kegiatan", href: "/actions" },
-                        { label: "Galeri", href: "/gallery" },
+                        { label: "Tentang", href: "/#" },
+                        { label: "Kegiatan", href: "/#" },
+                        { label: "Galeri", href: "/#" },
                       ].map((item, i) => (
                         <motion.li key={i} variants={fadeVariants}>
                           <Link
@@ -177,8 +177,8 @@ export function Navbar() {
                   <div className="flex-none w-full md:w-64 md:pt-10">
                     <ul className="space-y-3 text-3xl sm:text-4xl font-light leading-tight">
                       {[
-                        { label: "Jurnal", href: "/blog" },
-                        { label: "Kontak", href: "/contact" },
+                        { label: "Jurnal", href: "/#" },
+                        { label: "Kontak", href: "/#" },
                       ].map((item, i) => (
                         <motion.li key={i} variants={fadeVariants}>
                           <Link
@@ -207,13 +207,13 @@ export function Navbar() {
 
                 {/* Socials */}
                 <div className="flex gap-8 text-2xl">
-                  <Link href="https://twitter.com" target="_blank">
+                  <Link href="/#" target="_blank">
                     <FaXTwitter />
                   </Link>
-                  <Link href="https://instagram.com" target="_blank">
+                  <Link href="/#" target="_blank">
                     <FaLinkedinIn />
                   </Link>
-                  <Link href="mailto:hello@greenearth.org">
+                  <Link href="/#">
                     <TbMailFilled />
                   </Link>
                 </div>
